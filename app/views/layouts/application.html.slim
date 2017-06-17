@@ -1,0 +1,35 @@
+doctype html
+html
+  head
+    title Awesome Leaders
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+
+  body
+    .navbar.navbar-inverse.navbar-static-top
+      .container
+        button.navbar-toggle type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse"
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        .navbar-brand Awesome Leaders
+        .navbar-collapse.collapse.navbar-responsive-collapse
+          - if signed_in?
+            ul.nav.navbar-nav.navbar-right
+              li.dropdown
+                a.dropdown-toggle type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='true'
+                  = current_user.email
+                  span.caret
+                ul.dropdown-menu
+                  li
+                    a href='#' Action
+                  li
+                    a href='#' Another
+                  li
+                    a href='#' Something else
+                  li.divider
+                  li
+                    = link_to 'Logout', destroy_user_session_path, method: :delete
+
+    = yield
