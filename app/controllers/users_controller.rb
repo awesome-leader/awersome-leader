@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
-  def index
-  end
-
-  def show
+  def ranking
+    @users = User.includes(:awesomes)
+    @users = @users.sort_by {|u| u.awesomes.size }
   end
 end

@@ -1,0 +1,5 @@
+.container
+  ul.list-nonstyled
+    - @users.each.with_index do |u, i|
+      li = "#{i+1} #{u.email} #{u.awesomes.size} awesomes"
+
