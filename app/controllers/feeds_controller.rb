@@ -2,6 +2,7 @@ class FeedsController < ApplicationController
   def index
     @feed = Feed.new
     @feeds = Feed.includes(:user).order('created_at DESC')
+    ActiveRecord::Associations::Preloader.new.preload(current_user, :awesomes)
   end
 
   def create
