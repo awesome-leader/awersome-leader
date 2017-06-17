@@ -7,7 +7,6 @@ class FeedsController < ApplicationController
 
   def create
     @feed = Feed.create(feed_params.merge(user: current_user))
-    binding.pry
     if @feed.valid?
       redirect_to feeds_path
     else

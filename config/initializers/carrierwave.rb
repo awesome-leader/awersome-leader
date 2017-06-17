@@ -1,3 +1,7 @@
+require 'carrierwave/storage/abstract'
+require 'carrierwave/storage/file'
+require 'carrierwave/storage/fog'
+
 CarrierWave.configure do |config|
   require 'fog'
 
@@ -19,7 +23,7 @@ CarrierWave.configure do |config|
 		:provider               => 'AWS',                             # required
 		:aws_access_key_id      => 'AKIAJTPD2TTDUFLOKAHA',            # required
 		:aws_secret_access_key  => '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',     # required
-		:region                 => 'ap-northeaset-1'                        # optional, defaults to 'us-east-1'
+		:region                 => 'ap-northeast-1'                        # optional, defaults to 'us-east-1'
 	}
 	config.fog_directory  = 'awesome-leaders'               # required
 	#config.fog_host       = 'https://assets.example.com'           # optional, defaults to nil
