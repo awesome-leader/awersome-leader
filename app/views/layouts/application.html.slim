@@ -13,7 +13,10 @@ html
           span.icon-bar
           span.icon-bar
           span.icon-bar
-        .navbar-brand Awesome Leaders
+        .navbar-brand = link_to 'Awesome Leaders', root_path
+        - if signed_in?
+          ul.nav.navbar-nav
+            li = link_to 'Ranking', users_ranking_path
         .navbar-collapse.collapse.navbar-responsive-collapse
           - if signed_in?
             ul.nav.navbar-nav.navbar-right
