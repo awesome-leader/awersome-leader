@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :feeds
   resources :awesomes
   get 'users/ranking' => 'users#ranking'
+  get 'notifications/notify' => 'notifications#notify'
 
   devise_for :users
 

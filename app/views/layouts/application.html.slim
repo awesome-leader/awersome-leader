@@ -26,13 +26,13 @@ html
                   span.caret
                 ul.dropdown-menu
                   li
-                    a href='#' Action
-                  li
-                    a href='#' Another
-                  li
-                    a href='#' Something else
+                    a href='notifications/notify' Notify Hazard
                   li.divider
                   li
                     = link_to 'Logout', destroy_user_session_path, method: :delete
 
     = yield
+
+    .hazard
+      a.btn.btn-danger
+        h2 危険です
