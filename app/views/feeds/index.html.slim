@@ -1,2 +1,14 @@
 .container
-  | Feeds#index
+  = form_for @feed do |f|
+    .panel.panel-feed
+      - if @feed.errors.present?
+        .panel-heading
+          ul.form-error.list-unstyled.bg-danger
+            - @feed.errors.full_messages.each do |msg|
+              li= msg
+      .panel-body
+        .form-group
+          = f.text_area :body, placeholder: '今なにしてる？', class: 'form-control'
+        button.pull-right.btn.btn-default 投稿する
+
+  = render @feeds
