@@ -9,6 +9,13 @@
       .panel-body
         .form-group
           = f.text_area :body, placeholder: '今なにしてる？', class: 'form-control'
-        button.pull-right.btn.btn-default 投稿する
+        .pull-right
+          ul.list-inline
+            li
+              label for="take-picture" class='btn btn-default'
+                | 写真
+                input type="file" id="take-picture" accept="image/*" style="display: none;"
+            li
+              button.btn.btn-default 投稿する
 
   = render @feeds
