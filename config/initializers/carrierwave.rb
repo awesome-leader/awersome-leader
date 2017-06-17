@@ -1,5 +1,5 @@
-=begin
 CarrierWave.configure do |config|
+  require 'fog'
 
 	# Use local storage if in development or test
 	if Rails.env.development? || Rails.env.test?
@@ -17,8 +17,8 @@ CarrierWave.configure do |config|
 
 	config.fog_credentials = {
 		:provider               => 'AWS',                             # required
-		:aws_access_key_id      => '<your key goes here>',            # required
-		:aws_secret_access_key  => '<your secret key goes here>',     # required
+		:aws_access_key_id      => 'AKIAJTPD2TTDUFLOKAHA',            # required
+		:aws_secret_access_key  => 'dhI7iSxKVWpAOBXM9kA2qD0BdRblax3j0HflMzjw',     # required
 		:region                 => 'ap-northeaset-1'                        # optional, defaults to 'us-east-1'
 	}
 	config.fog_directory  = 'awesome-leaders'               # required
@@ -26,4 +26,3 @@ CarrierWave.configure do |config|
 	#config.fog_public     = false                                  # optional, defaults to true
 	config.fog_attributes = {'Cache-Control'=>'max-age=315576000'}  # optional, defaults to {}
 end
-=end

@@ -7,14 +7,15 @@
             - @feed.errors.full_messages.each do |msg|
               li= msg
       .panel-body
-        .form-group
+        .form-group#feed-data
           = f.text_area :body, placeholder: '今なにしてる？', class: 'form-control'
         .pull-right
           ul.list-inline
             li
-              label for="take-picture" class='btn btn-default'
+              label for="feed_image" class='btn btn-default'
                 | 写真
-                input type="file" id="take-picture" accept="image/*" style="display: none;"
+                = f.file_field :image, style: "display: none;"
+                = f.hidden_field :image_cache
             li
               button.btn.btn-default 投稿する
 

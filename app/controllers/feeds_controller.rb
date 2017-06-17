@@ -7,6 +7,7 @@ class FeedsController < ApplicationController
 
   def create
     @feed = Feed.create(feed_params.merge(user: current_user))
+    binding.pry
     if @feed.valid?
       redirect_to feeds_path
     else
@@ -17,6 +18,6 @@ class FeedsController < ApplicationController
 
   private
   def feed_params
-    params.require(:feed).permit(:body)
+    params.require(:feed).permit(:body, :image)
   end
 end
