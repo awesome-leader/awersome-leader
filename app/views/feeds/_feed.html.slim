@@ -5,7 +5,7 @@
         a href='#'
           img.avatar src="/avatar.png"
       .media-body
-        = feed.user.email
+        = feed.user.name || feed.user.email
         .feed_created_at.text-muted
           = feed.created_at.strftime("%Y/%m/%d %H:%M")
   .panel-body
