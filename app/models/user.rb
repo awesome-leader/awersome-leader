@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
   has_many :awesomes
   has_many :awesome_feeds, through: :awesomes
+
+  mount_uploader :image, ImageUploader
 end
