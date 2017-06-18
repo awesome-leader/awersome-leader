@@ -65,3 +65,4 @@ gem 'rails-footnotes', '~> 4.0'
 gem 'carrierwave'
 gem 'fog'
 gem 'redis'
+gem "font-awesome-rails"

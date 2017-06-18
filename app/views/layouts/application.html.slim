@@ -36,6 +36,10 @@ html
     .hazard
       a.btn.btn-danger data-toggle='modal' data-target='#hazard-map'
         h2 危険です
+
+    = link_to 'notifications/notify', id: 'hazard-button', remote: true do
+      i.fa.fa-exclamation.fa-5x aria-hidden='true'
+
     #hazard-map.modal.fade
       .modal-dialog
         .modal-content
